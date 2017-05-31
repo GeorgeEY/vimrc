@@ -1,0 +1,17 @@
+" **************************************************
+" AUTHOR: GeorgeEYokoyama<george_y@outlook.com>
+" WEBSITE: http://georgeyokoyama.com
+" SINCE: 5/29/2017 
+" LAST MODIFED: 5/29/2017
+" **************************************************
+
+" --------------------------------------------------
+" EDITOR BEHAVIOR
+" --------------------------------------------------
+
+"" Editor Theme
+let g:onedark_terminal_italics=1    " plugin dependent
+colorscheme onedark                 " plugin dependent
+
+"" Status Bar Theme
+let g:airline_theme='onedark'       " plugin dependent
