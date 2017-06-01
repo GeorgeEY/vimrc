@@ -10,8 +10,8 @@
 " --------------------------------------------------
 
 "" Editor Theme
-let g:onedark_terminal_italics=1    " plugin dependent
-colorscheme onedark                 " plugin dependent
+let g:onedark_terminal_italics=1    " ONEDARK DEPENDENT
+colorscheme onedark                 " ONEDARK DEPENDENT
 
 "" Status Bar Theme
-let g:airline_theme='onedark'       " plugin dependent
+let g:airline_theme='onedark'       " AIRLINE DEPENDENT
