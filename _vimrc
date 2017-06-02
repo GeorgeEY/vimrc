@@ -2,7 +2,7 @@
 " AUTHOR: GeorgeEYokoyama<george_y@outlook.com>
 " WEBSITE: http://georgeyokoyama.com
 " SINCE: 5/29/2017
-" LAST MODIFED: 5/31/2017
+" LAST MODIFED: 6/02/2017
 " **************************************************
 
 " --------------------------------------------------
@@ -18,10 +18,10 @@ Plug 'vim-airline/vim-airline-themes'   " status bar theme
 Plug 'nathanaelkane/vim-indent-guides'  " indent guide
 Plug 'scrooloose/nerdtree'              " file tree
 Plug 'mattn/emmet-vim'                  " better HTML & CSS workflow
-Plug 'ervandew/supertab'                " autocomplete on tab
 Plug 'vim-syntastic/syntastic'          " syntax checking
 Plug 'shutnik/jshint2.vim'              " JSHint integration
 Plug 'tpope/vim-fugitive'               " git wrapper
+Plug 'ervandew/supertab'                " tab completion
 
 call plug#end()
 
@@ -72,17 +72,18 @@ set incsearch   " incremental search
 autocmd VimEnter * NERDTree     " automatically open nerdtree
 autocmd VimEnter * wincmd p     " select main window upon vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif   " :q when nerdtree only
-let g:indent_guides_start_level=2               " self-explanatory
-let g:indent_guides_guide_size=1                " self-explanatory
-let g:indent_guides_enable_on_vim_startup=1     " self-explanatory
-let g:airline#extensions#tabline#enabled=1      " display all session files at top
-set statusline+=%#warningmsg#                   " SYNTASTIC
-set statusline+=%{SyntasticStatuslineFlag()}    " SYNTASTIC
-set statusline+=%*                              " SYNTASTIC
-let g:syntastic_always_populate_loc_list = 1    " SYNTASTIC
-let g:syntastic_auto_loc_list = 1               " SYNTASTIC
-let g:syntastic_check_on_open = 1               " SYNTASTIC
-let g:syntastic_check_on_wq = 0                 " SYNTASTIC
+let g:indent_guides_start_level=2                       " self-explanatory
+let g:indent_guides_guide_size=1                        " self-explanatory
+let g:indent_guides_enable_on_vim_startup=1             " self-explanatory
+let g:airline#extensions#tabline#enabled=1              " display all session files at top
+let g:airline#extensions#tabline#buffer_nr_show = 1     " display buffer number at top
+set statusline+=%#warningmsg#                           " SYNTASTIC
+set statusline+=%{SyntasticStatuslineFlag()}            " SYNTASTIC
+set statusline+=%*                                      " SYNTASTIC
+let g:syntastic_always_populate_loc_list = 1            " SYNTASTIC
+let g:syntastic_auto_loc_list = 1                       " SYNTASTIC
+let g:syntastic_check_on_open = 1                       " SYNTASTIC
+let g:syntastic_check_on_wq = 0                         " SYNTASTIC
 
 
 " --------------------------------------------------
