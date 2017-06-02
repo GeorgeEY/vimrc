@@ -10,8 +10,8 @@
 " --------------------------------------------------
 
 "" Editor Theme
-let g:onedark_terminal_italics=1    " ONEDARK DEPENDENT
-colorscheme onedark                 " ONEDARK DEPENDENT
+set background=dark                 " dark or light PAPERCOLOR DEPENDENT
+colorscheme PaperColor              " PAPERCOLOR DEPENDENT
 
 "" Status Bar Theme
-let g:airline_theme='onedark'       " AIRLINE DEPENDENT
+let g:airline_theme='papercolor'    " AIRLINE and PAPERCOLOR DEPENDENT
