@@ -1,7 +1,7 @@
 " **************************************************
 " AUTHOR: GeorgeEYokoyama<george_y@outlook.com>
 " WEBSITE: http://georgeyokoyama.com
-" SINCE: 5/29/2017 
+" SINCE: 5/29/2017
 " LAST MODIFED: 5/29/2017
 " **************************************************
 
@@ -9,9 +9,6 @@
 " EDITOR BEHAVIOR
 " --------------------------------------------------
 
-"" Editor Theme
-set background=dark                 " dark or light PAPERCOLOR DEPENDENT
-colorscheme PaperColor              " PAPERCOLOR DEPENDENT
-
-"" Status Bar Theme
-let g:airline_theme='papercolor'    " AIRLINE and PAPERCOLOR DEPENDENT
+"" papercolor
+set background=light " dark || light
+colorscheme PaperColor

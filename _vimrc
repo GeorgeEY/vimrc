@@ -12,16 +12,25 @@
 call plug#begin('~/Vim/vimfiles/plugged')
 
 "" Plugins
-Plug 'NLKNguyen/papercolor-theme'       " gvim theme -gvimrc
+" Theme (gvim)
+Plug 'NLKNguyen/papercolor-theme'       " papercolor
+
+" Behavior
 Plug 'vim-airline/vim-airline'          " improved status bar
 Plug 'vim-airline/vim-airline-themes'   " status bar theme
 Plug 'nathanaelkane/vim-indent-guides'  " indent guide
 Plug 'scrooloose/nerdtree'              " file tree
-Plug 'mattn/emmet-vim'                  " better HTML & CSS workflow
+Plug 'ctrlpvim/ctrlp.vim'               " fuzzy finder
+Plug 'easymotion/vim-easymotion'        " easy motion
+Plug 'terryma/vim-multiple-cursors'     " multiple cursor
+
+Plug 'mattn/emmet-vim'                  " improved HTML & CSS workflow
+
+"" Under Consideration
+" Plug 'ryanoasis/vim-devicons'           " file type icons
+Plug 'tpope/vim-fugitive'               " git wrapper
 Plug 'vim-syntastic/syntastic'          " syntax checking
 Plug 'shutnik/jshint2.vim'              " JSHint integration
-Plug 'tpope/vim-fugitive'               " git wrapper
-Plug 'ervandew/supertab'                " tab completion
 
 call plug#end()
 
@@ -36,7 +45,7 @@ set guifont=Ubuntu_Mono:h11:cANSI,Consolas:h11:cANSI     " font
 if !exists("g:syntax_on")       " enable syntax highlighting
     syntax enable
 endif
-filetype plugin on                     " filetype detection
+filetype plugin on              " filetype detection
 set wildmenu                    " enhanced commandline completion
 set wildignore+=*.swp,*exe      " a list of file patterns to be ignored in wildmenu
 set number                      " display line number
@@ -61,7 +70,7 @@ autocmd GUIEnter * simalt ~x    " start vim/gvim maximized, depends on windows l
 
 "" Search
 set ignorecase  " case is ignored
-set smartcase   " override ignorecase when search pattern contains uppercase
+"set smartcase   " override ignorecase when search pattern contains uppercase
 set infercase   " case of match is adjusted depending on the typed text
 set hlsearch    " search match highlighting
 set incsearch   " incremental search
