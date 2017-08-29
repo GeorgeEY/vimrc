@@ -10,5 +10,5 @@
 " --------------------------------------------------
 
 "" papercolor
-set background=light " dark || light
+set background=dark " dark || light
 colorscheme PaperColor

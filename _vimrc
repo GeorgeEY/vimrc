@@ -119,16 +119,28 @@ nnoremap <leader>sgv :source $MYGVIMRC<cr>
 "" Insert Mode
 " <esc> remap
 inoremap jk <esc>
+" autoclose parenthesis
+inoremap ( ()<esc>i
+inoremap { {}<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+inoremap ` ``<esc>i
+" console.log
+inoremap <leader>log console.log();<esc>hi
 
 "" Normal Mode
 " toggle NERDTree
 nnoremap <leader>nn :NERDTreeToggle<cr>
 
 "" Visual Mode
-" wrap in double quotes
+" wrap in ...
 vnoremap " <esc>a"<esc>`<i"<esc>`>
-" wrap in single quotes
 vnoremap ' <esc>a'<esc>`<i'<esc>`>
+vnoremap ( <esc>a)<esc>`<i(<esc>`>
+vnoremap [ <esc>a]<esc>`<i[<esc>`> 
+vnoremap { <esc>a}<esc>`<i{<esc>`> 
+
 
 " --------------------------------------------------
 " ABBREVIATIONS
