@@ -2,7 +2,7 @@
 " AUTHOR: GeorgeEYokoyama<george_y@outlook.com>
 " WEBSITE: http://georgeyokoyama.com
 " SINCE: 5/29/2017
-" LAST MODIFED: 6/02/2017
+" LAST MODIFED: 9/10/2017
 " **************************************************
 
 " --------------------------------------------------
@@ -13,24 +13,27 @@ call plug#begin('~/Vim/vimfiles/plugged')
 
 "" Plugins
 " Theme (gvim)
-Plug 'NLKNguyen/papercolor-theme'       " papercolor
+Plug 'https://github.com/NLKNguyen/papercolor-theme'    " papercolor
 
 " Behavior
-Plug 'vim-airline/vim-airline'          " improved status bar
-Plug 'vim-airline/vim-airline-themes'   " status bar theme
-Plug 'nathanaelkane/vim-indent-guides'  " indent guide
-Plug 'scrooloose/nerdtree'              " file tree
-Plug 'ctrlpvim/ctrlp.vim'               " fuzzy finder
-Plug 'easymotion/vim-easymotion'        " easy motion
-Plug 'terryma/vim-multiple-cursors'     " multiple cursor
+Plug 'https://github.com/vim-airline/vim-airline'           " improved status bar
+Plug 'https://github.com/vim-airline/vim-airline-themes'    " status bar theme
+Plug 'https://github.com/nathanaelkane/vim-indent-guides'   " indent guide
+Plug 'https://github.com/terryma/vim-multiple-cursors'      " multiple cursor
+Plug 'https://github.com/easymotion/vim-easymotion'         " easy motion
+Plug 'https://github.com/jeetsukumaran/vim-filebeagle'      " file tree
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'                " fuzzy finder
+Plug 'https://github.com/moll/vim-node'                     " NodeJS Development
+Plug 'https://github.com/mattn/emmet-vim'                   " improved HTML & CSS workflow
 
-Plug 'mattn/emmet-vim'                  " improved HTML & CSS workflow
+"" Syntax
+Plug 'https://github.com/pangloss/vim-javascript'                   " JavaScript
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim'    " JavaScript Libraries
 
 "" Under Consideration
-" Plug 'ryanoasis/vim-devicons'           " file type icons
-Plug 'tpope/vim-fugitive'               " git wrapper
-Plug 'vim-syntastic/syntastic'          " syntax checking
-Plug 'shutnik/jshint2.vim'              " JSHint integration
+Plug 'https://github.com/tpope/vim-fugitive'        " git wrapper
+" Plug 'https://github.com/vim-syntastic/syntastic' " syntax checking
+" Plug 'https://github.com/Shutnik/jshint2.vim'     " JSHint integration
 
 call plug#end()
 
@@ -78,9 +81,6 @@ set incsearch   " incremental search
 " --------------------------------------------------
 " PLUGIN BEHAVIOR
 " --------------------------------------------------
-autocmd VimEnter * NERDTree     " automatically open nerdtree
-autocmd VimEnter * wincmd p     " select main window upon vim startup
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif   " :q when nerdtree only
 let g:indent_guides_start_level=2                       " self-explanatory
 let g:indent_guides_guide_size=1                        " self-explanatory
 let g:indent_guides_enable_on_vim_startup=1             " self-explanatory
@@ -130,16 +130,14 @@ inoremap ` ``<esc>i
 inoremap <leader>log console.log();<esc>hi
 
 "" Normal Mode
-" toggle NERDTree
-nnoremap <leader>nn :NERDTreeToggle<cr>
 
 "" Visual Mode
 " wrap in ...
 vnoremap " <esc>a"<esc>`<i"<esc>`>
 vnoremap ' <esc>a'<esc>`<i'<esc>`>
 vnoremap ( <esc>a)<esc>`<i(<esc>`>
-vnoremap [ <esc>a]<esc>`<i[<esc>`> 
-vnoremap { <esc>a}<esc>`<i{<esc>`> 
+vnoremap [ <esc>a]<esc>`<i[<esc>`>
+vnoremap { <esc>a}<esc>`<i{<esc>`>
 
 
 " --------------------------------------------------
