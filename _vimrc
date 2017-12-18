@@ -25,10 +25,13 @@ Plug 'https://github.com/jeetsukumaran/vim-filebeagle'      " file tree
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'                " fuzzy finder
 Plug 'https://github.com/moll/vim-node'                     " NodeJS Development
 Plug 'https://github.com/mattn/emmet-vim'                   " improved HTML & CSS workflow
+Plug 'https://github.com/ap/vim-css-color'                   " preview colors
+Plug 'https://github.com/scrooloose/nerdcommenter'                   " Better comments
 
 "" Syntax
 Plug 'https://github.com/pangloss/vim-javascript'                   " JavaScript
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim'    " JavaScript Libraries
+Plug 'https://github.com/posva/vim-vue'                             " vue Syntax
 
 "" Under Consideration
 Plug 'https://github.com/tpope/vim-fugitive'        " git wrapper
@@ -54,6 +57,7 @@ set wildignore+=*.swp,*exe      " a list of file patterns to be ignored in wildm
 set number                      " display line number
 set ruler                       " display column number
 set cursorline                  " highlight current line
+set lazyredraw                  " buffer file for faster scrolling with cursorline
 set showmatch                   " highlight matching brace
 set matchtime=3                 " briefly jump to matching brace
 set wrap                        " text wrap
@@ -61,10 +65,11 @@ set linebreak                   " prevent wrap inside word
 set textwidth=0                 " disable max width of text for wrapping
 set wrapmargin=0                " right margin for wrapping
 set expandtab                   " tab insert spaces
-set tabstop=4                   " number of space characters on tab
-set softtabstop=4               " number of space characters on tab
-set shiftwidth=4                " number of space characters on indentation
+set tabstop=2                   " number of space characters on tab
+set softtabstop=2              " number of space characters on tab
+set shiftwidth=2                " number of space characters on indentation
 set shiftround                  " round indent to multiple of shiftwidth
+set scrolloff=3                 " Keep 3 lines away from cursor
 set backspace=indent,eol,start  " backspace works like other programs
 set autoindent                  " new line will have same indent as current line
 set smartindent                 " new line indent will react to syntax/stylem, dependent on autoindent on
@@ -81,18 +86,18 @@ set incsearch   " incremental search
 " --------------------------------------------------
 " PLUGIN BEHAVIOR
 " --------------------------------------------------
+let g:indent_guides_enable_on_vim_startup=1             " self-explanatory
 let g:indent_guides_start_level=2                       " self-explanatory
 let g:indent_guides_guide_size=1                        " self-explanatory
-let g:indent_guides_enable_on_vim_startup=1             " self-explanatory
 let g:airline#extensions#tabline#enabled=1              " display all session files at top
 let g:airline#extensions#tabline#buffer_nr_show = 1     " display buffer number at top
-set statusline+=%#warningmsg#                           " SYNTASTIC
-set statusline+=%{SyntasticStatuslineFlag()}            " SYNTASTIC
-set statusline+=%*                                      " SYNTASTIC
-let g:syntastic_always_populate_loc_list = 1            " SYNTASTIC
-let g:syntastic_auto_loc_list = 1                       " SYNTASTIC
-let g:syntastic_check_on_open = 1                       " SYNTASTIC
-let g:syntastic_check_on_wq = 0                         " SYNTASTIC
+" set statusline+=%#warningmsg#                           " SYNTASTIC
+" set statusline+=%{SyntasticStatuslineFlag()}            " SYNTASTIC
+" set statusline+=%*                                      " SYNTASTIC
+" let g:syntastic_always_populate_loc_list = 1            " SYNTASTIC
+" let g:syntastic_auto_loc_list = 1                       " SYNTASTIC
+" let g:syntastic_check_on_open = 1                       " SYNTASTIC
+" let g:syntastic_check_on_wq = 0                         " SYNTASTIC
 
 
 " --------------------------------------------------
