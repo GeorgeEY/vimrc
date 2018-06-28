@@ -1,8 +1,8 @@
 " **************************************************
 " AUTHOR: GeorgeEYokoyama<george_y@outlook.com>
-" WEBSITE: http://georgeyokoyama.com
+" WEBSITE: http://georgeeyokoyama.github.io
 " SINCE: 5/29/2017
-" LAST MODIFED: 9/10/2017
+" LAST MODIFED: 6/27/2018
 " **************************************************
 
 " --------------------------------------------------
@@ -13,30 +13,29 @@ call plug#begin('~/Vim/vimfiles/plugged')
 
 "" Plugins
 " Theme (gvim)
-Plug 'https://github.com/NLKNguyen/papercolor-theme'    " papercolor
+Plug 'https://github.com/NLKNguyen/papercolor-theme'                " papercolor
 
 " Behavior
-Plug 'https://github.com/vim-airline/vim-airline'           " improved status bar
-Plug 'https://github.com/vim-airline/vim-airline-themes'    " status bar theme
-Plug 'https://github.com/nathanaelkane/vim-indent-guides'   " indent guide
-Plug 'https://github.com/terryma/vim-multiple-cursors'      " multiple cursor
-Plug 'https://github.com/easymotion/vim-easymotion'         " easy motion
-Plug 'https://github.com/jeetsukumaran/vim-filebeagle'      " file tree
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'                " fuzzy finder
-Plug 'https://github.com/moll/vim-node'                     " NodeJS Development
-Plug 'https://github.com/mattn/emmet-vim'                   " improved HTML & CSS workflow
-Plug 'https://github.com/ap/vim-css-color'                   " preview colors
-Plug 'https://github.com/scrooloose/nerdcommenter'                   " Better comments
+Plug 'https://github.com/vim-airline/vim-airline'                   " improved status bar
+Plug 'https://github.com/vim-airline/vim-airline-themes'            " status bar theme
+Plug 'https://github.com/nathanaelkane/vim-indent-guides'           " indent guide
+Plug 'https://github.com/terryma/vim-multiple-cursors'              " multiple cursor
+Plug 'https://github.com/easymotion/vim-easymotion'                 " easy motion
+Plug 'https://github.com/jeetsukumaran/vim-filebeagle'              " file tree
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'                        " fuzzy finder
+Plug 'https://github.com/mattn/emmet-vim'                           " improved HTML & CSS workflow
+Plug 'https://github.com/ap/vim-css-color'                          " preview colors
+Plug 'https://github.com/scrooloose/nerdcommenter'                  " Better comments
+Plug 'https://github.com/moll/vim-node'                             " NodeJS Development
+Plug 'https://github.com/tpope/vim-fugitive'                        " git wrapper
+Plug 'https://github.com/tpope/vim-surround'                        " surround with parenthesis, brackets, quotes...
 
 "" Syntax
-Plug 'https://github.com/pangloss/vim-javascript'                   " JavaScript
-Plug 'https://github.com/othree/javascript-libraries-syntax.vim'    " JavaScript Libraries
-Plug 'https://github.com/posva/vim-vue'                             " vue Syntax
-
-"" Under Consideration
-Plug 'https://github.com/tpope/vim-fugitive'        " git wrapper
-" Plug 'https://github.com/vim-syntastic/syntastic' " syntax checking
-" Plug 'https://github.com/Shutnik/jshint2.vim'     " JSHint integration
+Plug 'https://github.com/pangloss/vim-javascript'                   " JavaScript hightlighting and indentation
+Plug 'http://github.com/mxw/vim-jsx'                                " JSX
+" Plug 'https://github.com/vim-syntastic/syntastic'                   " syntax checking
+"Plug 'https://github.com/othree/javascript-libraries-syntax.vim'   " JavaScript Libraries
+Plug 'https://github.com/posva/vim-vue'                            " vue Syntax
 
 call plug#end()
 
@@ -49,7 +48,7 @@ set nocompatible                " remove vi compatibility
 "" Coding Awareness
 set guifont=Ubuntu_Mono:h11:cANSI,Consolas:h11:cANSI     " font
 if !exists("g:syntax_on")       " enable syntax highlighting
-    syntax enable
+  syntax enable
 endif
 filetype plugin on              " filetype detection
 set wildmenu                    " enhanced commandline completion
@@ -86,20 +85,12 @@ set incsearch   " incremental search
 " --------------------------------------------------
 " PLUGIN BEHAVIOR
 " --------------------------------------------------
-let g:indent_guides_enable_on_vim_startup=1             " self-explanatory
 let g:indent_guides_start_level=2                       " self-explanatory
 let g:indent_guides_guide_size=1                        " self-explanatory
 let g:airline#extensions#tabline#enabled=1              " display all session files at top
 let g:airline#extensions#tabline#buffer_nr_show = 1     " display buffer number at top
-" set statusline+=%#warningmsg#                           " SYNTASTIC
-" set statusline+=%{SyntasticStatuslineFlag()}            " SYNTASTIC
-" set statusline+=%*                                      " SYNTASTIC
-" let g:syntastic_always_populate_loc_list = 1            " SYNTASTIC
-" let g:syntastic_auto_loc_list = 1                       " SYNTASTIC
-" let g:syntastic_check_on_open = 1                       " SYNTASTIC
-" let g:syntastic_check_on_wq = 0                         " SYNTASTIC
-
-
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*/.git      " Windows
+let g:ctrlp_custom_ignore = 'node_modules'
 " --------------------------------------------------
 " LEADER & LOCALLEADER
 " --------------------------------------------------
@@ -124,26 +115,14 @@ nnoremap <leader>sgv :source $MYGVIMRC<cr>
 "" Insert Mode
 " <esc> remap
 inoremap jk <esc>
-" autoclose parenthesis
-inoremap ( ()<esc>i
-inoremap { {}<esc>i
-inoremap [ []<esc>i
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap ` ``<esc>i
 " console.log
 inoremap <leader>log console.log();<esc>hi
 
 "" Normal Mode
+" show current path
+nnoremap <leader>pwd :echo expand('%:p')<cr>
 
 "" Visual Mode
-" wrap in ...
-vnoremap " <esc>a"<esc>`<i"<esc>`>
-vnoremap ' <esc>a'<esc>`<i'<esc>`>
-vnoremap ( <esc>a)<esc>`<i(<esc>`>
-vnoremap [ <esc>a]<esc>`<i[<esc>`>
-vnoremap { <esc>a}<esc>`<i{<esc>`>
-
 
 " --------------------------------------------------
 " ABBREVIATIONS
